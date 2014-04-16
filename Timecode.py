@@ -2,7 +2,9 @@ class Timecode(object):
 
     def __init__ (self, frames):
         '''
-        Init timecode object with a number of frames
+        Init timecode object with a number of frames,
+        If frames not an integer init method initialises
+        With frame count set to 0
         '''
         try:
             assert isinstance(frames, int)
@@ -12,13 +14,14 @@ class Timecode(object):
 
     def getFrames(self):
         '''
-        Return frames
+        Returns frames stored within the Timecode object
         '''
         return self.frames
 
     def setFrames(self, frames):
         '''
-        Alter number of frames within a Timecode object
+        Set the number of frames within the Timecode object
+        If frames passed in is not an integer do nothing
         '''
         try:
             assert isinstance(frames, int)
