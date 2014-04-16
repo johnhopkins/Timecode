@@ -1,0 +1,7 @@
+Add the following object comparison methods:
+
+> Greater than
+< less than
+== is equal to
+
+Do we need to store the frame rate within the object or pass it in as needed?
