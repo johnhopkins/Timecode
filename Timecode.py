@@ -31,13 +31,14 @@ class Timecode(object):
 
     def getTimecode(self, framerate):
         '''
-        Converts frames into Hours, Minutes and Seconds
-        and returns a human readable timecode string
+        Takes a frame rate interger and converts frames into Hours, Minutes and Seconds
+        and frames, then returns a human readable timecode string based on the number of
+        frames stored in the instance and the framerate
         '''
-        hrs = self.frames / (3600*framerate)
-        mins = self.frames / (60*framerate) % 60
-        secs = self.frames / framerate % 60
-        frms = self.frames % framerate
+        hrs = int(self.frames / (3600*framerate))
+        mins = int(self.frames / (60*framerate) % 60)
+        secs = int(self.frames / framerate % 60)
+        frms = int(self.frames % framerate)
         
         return '{0:02d}:{1:02d}:{2:02d}:{3:02d}'.format(hrs,mins,secs,frms)
 
